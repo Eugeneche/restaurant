@@ -1,12 +1,17 @@
 import * as React from "react"
-
+import { Link } from "gatsby"
 import Layout from "../components/layout"
 import Seo from "../components/seo"
 
+import * as styles from "../style/_style.module.scss"
+
 const NotFoundPage = () => (
   <Layout>
-    <h1>404: Not Found</h1>
-    <p>You just hit a route that doesn&#39;t exist... the sadness.</p>
+    <div className={styles.container}>
+      <h1>404: Tato stránka neexistuje</h1>
+      <Link to="/">Home</Link>
+      <p>Je nám líto, ale nemůžeme najít stránku, kterou hledáte.</p>
+    </div>
   </Layout>
 )
 
