@@ -1,3 +1,5 @@
+@import '../../style/vars';
+
 .menu-container {
     max-width: 1200px;
     margin: auto;
@@ -18,7 +20,7 @@
             font-weight: 400;
             text-transform: uppercase;
             margin-left: 20px;
-            color: #7c0d0d;
+            color: $base-color;
         }
 
     }
