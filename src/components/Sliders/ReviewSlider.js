@@ -43,7 +43,7 @@ const ReviewSlider = () => {
     return () => {
       clearInterval(moveLeft)
     }
-  }, [leftValue])
+  }, [leftValue, reviews.length])
 
     return (
         <div className={styles.reviewSlider} style={{left: `${leftValue * -100}%`}}>
