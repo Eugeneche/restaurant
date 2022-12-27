@@ -1,5 +1,5 @@
 import * as React from "react"
-import { Link } from "gatsby"
+//import { Link } from "gatsby"
 import { StaticImage } from "gatsby-plugin-image"
 
 import Layout from "../components/layout"
@@ -7,6 +7,7 @@ import Seo from "../components/seo"
 import * as styles from "../style/_style.module.scss"
 import MainMenu from "../components/MainMenu/MainMenu"
 import Header from "../components/Header/Header"
+import ReviewSlider from "../components/Sliders/ReviewSlider"
 
 const IndexPage = () => {
   
@@ -84,11 +85,10 @@ const IndexPage = () => {
           <div className={styles.gap}></div>
 
           <section className={styles.contentBlock}>
-            <div className={styles.container}>
+            <div className={`${styles.container} ${styles.reviewBlock}`}>
               <h2>Recenze</h2>
-              <p>
-              Styly jsou doménou především Wordu, v PowerPointu jde o přednastavená rozložení snímků. Styly nesou informace o velikosti a barvě písma pro různé části dokumentu. Velmi jednoduchý dokument by v zásadě mohl mít jen několik stylů, a to běžný text - ve Wordu standardně označován jako Normální - a nadpisy první úrovně, druhé úrovně atd. - standardní označení stylů je Nadpis 1, Nadpis 2 atd., názvy stylů lze ovšem měnit.
-              </p>
+              <ReviewSlider />
+
             </div> 
           </section>
 

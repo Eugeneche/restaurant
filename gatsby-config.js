@@ -13,9 +13,11 @@ module.exports = {
     description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
     author: `@gatsbyjs`,
     siteUrl: `https://gatsbystarterdefaultsource.gatsbyjs.io/`,
+    devUrl: `http://localhost:8000`,
   },
   plugins: [
     `gatsby-plugin-image`,
+    `gatsby-plugin-mdx`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -28,6 +30,13 @@ module.exports = {
       options: {
         name: `reviews`,
         path: `${__dirname}/src/data/reviews`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `jquery`,
+        path: `${__dirname}/src/components/Sliders/slick`,
       },
     },
     `gatsby-transformer-sharp`,
