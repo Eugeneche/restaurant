@@ -4,7 +4,7 @@ import { StaticImage } from "gatsby-plugin-image"
 
 import Layout from "../components/layout"
 import Seo from "../components/seo"
-import * as styles from "../style/_style.module.scss"
+import * as styles from "../style/_index.module.scss"
 import MainMenu from "../components/MainMenu/MainMenu"
 import Header from "../components/Header/Header"
 import ReviewSlider from "../components/Sliders/ReviewSlider"
@@ -19,7 +19,6 @@ const IndexPage = () => {
             src="../images/wood-background.jpg"
             alt="background"
             layout="fullWidth"
-            /* height={500} */
             style={{minHeight: "600px"}}
           />
           <StaticImage 
@@ -41,8 +40,9 @@ const IndexPage = () => {
       <MainMenu />
       <Header />
       <Layout>
-        
-
+        <div className={styles.container}>
+          <h1>Restaurace Nostalgie</h1>
+        </div>
         
           <section className={`${styles.contentBlock} ${styles.about}`}>
             <div className={styles.container}>
@@ -58,7 +58,7 @@ const IndexPage = () => {
           <section className={styles.contentBlock}>
             <div className={styles.container}>
             <h2>Jen gril a dřevěné uhlí</h2>
-            <div className={styles.twoColumns}>
+            <div className={styles.offer}>
               <div className={styles.polygonBorger}>
                 <StaticImage 
                   src="../images/meat.jpg"

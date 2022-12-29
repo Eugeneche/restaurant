@@ -29,14 +29,14 @@ module.exports = {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `reviews`,
-        path: `${__dirname}/src/data/reviews`,
+        path: `${__dirname}/data/reviews`,
       },
     },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        name: `jquery`,
-        path: `${__dirname}/src/components/Sliders/slick`,
+        name: `menu`,
+        path: `${__dirname}/data/menu`,
       },
     },
     `gatsby-transformer-sharp`,

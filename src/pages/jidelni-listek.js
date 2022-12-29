@@ -1,21 +1,49 @@
 import * as React from "react"
-import { Link } from "gatsby"
+//import { Link } from "gatsby"
 //import { StaticImage } from "gatsby-plugin-image"
 
 import Layout from "../components/layout"
 import Seo from "../components/seo"
 import * as styles from "../style/_style.module.scss"
+import MainMenu from "../components/MainMenu/MainMenu"
+//import Table from "../components/Table/Table"
 
-const foodMenu = () => {
+const FoodMenu = () => {
   
   return (
-    <Layout>
-      <div className={styles.container}>
-      <Link to="/">Home</Link>
-        <h1>Jídelní lístek</h1>
+    <div style={{overflowY: "scroll"}}>
+     
+      <Layout> 
+        <MainMenu />
+        <div className={styles.container}>
+          <h1>Jídelní lístek</h1>
 
-      </div>    
-    </Layout>
+          <section>
+            <h2>PŘEDKRMY</h2>
+            <div className={styles.menu}>
+              {/* <Table /> */}
+              <div className={styles.menuColumn}>
+                <div className={styles.dishName}>
+
+                </div>
+                <div className={styles.dishPrice}>
+
+                </div>
+              </div>
+              <div className={styles.menuColumn}>
+                <div className={styles.dishName}>
+
+                </div>
+                <div className={styles.dishPrice}>
+
+                </div>
+              </div>
+            </div>
+          </section>
+        </div> 
+      </Layout>
+    </div>
+
 )}
 
 /**
@@ -25,4 +53,4 @@ const foodMenu = () => {
  */
 export const Head = () => <Seo title="Jídelní lístek" />
 
-export default foodMenu
+export default FoodMenu
