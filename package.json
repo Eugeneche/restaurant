@@ -13,9 +13,12 @@
     "gatsby-plugin-sass": "^6.3.1",
     "gatsby-plugin-sharp": "^5.3.2",
     "gatsby-source-filesystem": "^5.3.1",
+    "gatsby-theme-i18n": "github:Eugeneche/gatsby-theme-i18n",
     "gatsby-transformer-sharp": "^5.3.1",
+    "i18next": "^22.4.6",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-i18next": "^12.1.1",
     "sass": "^1.57.1"
   },
   "devDependencies": {

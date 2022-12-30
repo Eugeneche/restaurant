@@ -9,7 +9,11 @@ import MainMenu from "../components/MainMenu/MainMenu"
 import Header from "../components/Header/Header"
 import ReviewSlider from "../components/Sliders/ReviewSlider"
 
+import { useTranslation } from "react-i18next"
+
 const IndexPage = () => {
+
+  const { t } = useTranslation()
   
   return (
     
@@ -41,7 +45,7 @@ const IndexPage = () => {
       <Header />
       <Layout>
         <div className={styles.container}>
-          <h1>Restaurace Nostalgie</h1>
+          <h1>{t("main_page_title")}</h1>
         </div>
         
           <section className={`${styles.contentBlock} ${styles.about}`}>
