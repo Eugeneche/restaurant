@@ -1,7 +1,9 @@
 import React from "react"
-import { Link } from "gatsby"
+//import { Link } from "gatsby"
+import { LocalizedLink as Link } from "gatsby-theme-i18n"
 import { StaticImage } from "gatsby-plugin-image"
 import * as styles from "./_MainMenu.module.scss"
+import LanguageSwitcher from "../LanguageSwitcher/LanguageSwitcher"
 
 //import logo from "../../images/logo.png"
 
@@ -20,6 +22,7 @@ const MainMenu = () => {
                     <Link to="/jidelni-listek">Jídelní lístek</Link>
                     <Link to="/kontakt">Kontakt</Link>
                 </div>
+                <LanguageSwitcher />
             </div>
         </>
     )

@@ -10,11 +10,12 @@ import Header from "../components/Header/Header"
 import ReviewSlider from "../components/Sliders/ReviewSlider"
 
 import { useTranslation } from "react-i18next"
+//import { useLocalization } from "gatsby-theme-i18n"
 
 const IndexPage = () => {
 
   const { t } = useTranslation()
-  
+
   return (
     
     <div className={styles.parallax}>

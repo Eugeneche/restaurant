@@ -12,7 +12,7 @@ exports.onPreInit = ({ store }, { locales }) => {
 }
 // Let plugins extend/mutate the site’s webpack configuration.
 exports.onCreateWebpackConfig = ({ actions, plugins }) => {
-  // Expose the absolute path to the locale directory as 
+  // Expose the absolute path to the locale directory as
   // a global variable.
   actions.setWebpackConfig({
     plugins: [
