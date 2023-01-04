@@ -1,23 +1,25 @@
-/**
- * Layout component that queries for data
- * with Gatsby's useStaticQuery component
- *
- * See: https://www.gatsbyjs.com/docs/how-to/querying-data/use-static-query/
- */
+import React from "react"
+import { MDXProvider } from "@mdx-js/react"
+import Navigation from "./navigation"
+import MdxLink from "./mdxLink"
 
-import * as React from "react"
+const LocaleContext = React.createContext()
 
-import "./layout.css"
-import Footer from "./Footer/Footer"
+// Use the built-in Context API to make the "locale" available to every component in the tree
+// This e.g. enables the LocalizedLink to function correctly
+// As this component wraps every page (due to the wrapPageElement API) we can be sure to have
+// the locale available everywhere!
+const Layout = ({ children, pageContext: { locale } }) => (
+  <LocaleContext.Provider value={{ locale }}>
+    <div className="global-wrapper">
+      <header className="global-header">
+        <Navigation />
+      </header>
+      <MDXProvider components={{ a: MdxLink }}>
+        <main>{children}</main>
+      </MDXProvider>
+    </div>
+  </LocaleContext.Provider>
+)
 
-const Layout = ({ children }) => {
-
-  return (
-    <>
-      <main>{children}</main>
-      <Footer />
-    </>
-  )
-}
-
-export default Layout
+export { Layout, LocaleContext }
