@@ -5,7 +5,7 @@ const Footer = () => {
 
     return (
         <footer className={styles.footer}>
-            © {new Date().getFullYear()}
+            © {/* {new Date().getFullYear()} */}
         </footer>
     )
 
