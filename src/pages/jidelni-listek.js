@@ -1,4 +1,5 @@
 import * as React from "react"
+import { graphql } from "gatsby"
 //import { Link } from "gatsby"
 //import { StaticImage } from "gatsby-plugin-image"
 
@@ -9,6 +10,10 @@ import MainMenu from "../components/MainMenu/MainMenu"
 //import Table from "../components/Table/Table"
 
 const FoodMenu = () => {
+
+  const appetizers = query.allMenuXlsxAppetizers.nodes
+  const mainDishes = query.allMenuXlsxMainDishes.nodes
+  const deserts = query.allMenuXlsxDeserts.nodes
   
   return (
     <div style={{overflowY: "scroll"}}>
@@ -54,3 +59,32 @@ const FoodMenu = () => {
 export const Head = () => <Seo title="Jídelní lístek" />
 
 export default FoodMenu
+
+export const query = graphql`
+query getMenu {
+  allMenuXlsxAppetizers {
+    nodes {
+      cs
+      en
+      price
+      ru
+    }
+  }
+  allMenuXlsxDeserts {
+    nodes {
+      cs
+      en
+      price
+      ru
+    }
+  }
+  allMenuXlsxMainDishes {
+    nodes {
+      cs
+      en
+      price
+      ru
+    }
+  }
+}
+`

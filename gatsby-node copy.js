@@ -42,7 +42,7 @@ exports.onCreatePage = ({ page, actions }) => {
 
   // First delete the incoming page that was automatically created by Gatsby
   // So everything in src/pages/
-  //deletePage(page)
+  deletePage(page)
 
   // Grab the keys ('en' & 'de') of locales and map over them
   Object.keys(locales).map(lang => {
@@ -64,6 +64,64 @@ exports.onCreatePage = ({ page, actions }) => {
         ...page.context,
         locale: lang,
         dateFormat: locales[lang].dateFormat,
+      },
+    })
+  })
+}
+
+exports.createPages = async ({ graphql, actions }) => {
+  const { createPage } = actions
+
+  const postTemplate = require.resolve(`./src/templates/menu.js`)
+
+  const result = await graphql(`
+    {
+      blog: allFile(filter: { sourceInstanceName: { eq: "menu" } }) {
+        edges {
+          node {
+            relativeDirectory
+            childMdx {
+              fields {
+                locale
+                isDefault
+              }
+              frontmatter {
+                title
+              }
+            }
+          }
+        }
+      }
+    }
+  `)
+
+  if (result.errors) {
+    console.error(result.errors)
+    return
+  }
+
+  const postList = result.data.blog.edges
+
+  postList.forEach(({ node: post }) => {
+    // All files for a blogpost are stored in a folder
+    // relativeDirectory is the name of the folder
+    const slug = post.relativeDirectory
+
+    const title = post.childMdx.frontmatter.title
+
+    // Use the fields created in exports.onCreateNode
+    const locale = post.childMdx.fields.locale
+    const isDefault = post.childMdx.fields.isDefault
+
+    createPage({
+      path: localizedSlug({ isDefault, locale, slug }),
+      component: postTemplate,
+      context: {
+        // Pass both the "title" and "locale" to find a unique file
+        // Only the title would not have been sufficient as articles could have the same title
+        // in different languages, e.g. because an english phrase is also common in german
+        locale,
+        title,
       },
     })
   })

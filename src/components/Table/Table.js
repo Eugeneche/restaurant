@@ -1,26 +1,21 @@
-
-/* import React from "react"
-import { useStaticQuery, graphql } from "gatsby"
-import remarkGfm from 'remark-gfm'
+import React from "react"
+//import { useStaticQuery, graphql } from "gatsby"
 import * as styles from "./_Table.module.scss"
 
 const Table = () => {
 
-    const data = useStaticQuery(
+/*     const data = useStaticQuery(
         graphql`
-          query {
-            file(sourceInstanceName: {eq: "menu"}) {
-                childMdx {
-                  frontmatter {
-                    order
-                    type
-                  }
-                  body
-                }
-              }
+        query {
+          allAppetizersXlsxAppetizers {
+            nodes {
+              cs
+              price
+            }
           }
+        }
         `
-    )
+    ) */
 console.log(data)
     return (
         <div className={styles.table}>
@@ -29,4 +24,4 @@ console.log(data)
 
 }
 
-export default Table */
+export default Table
