@@ -9,7 +9,11 @@ import * as styles from "../style/_style.module.scss"
 import MainMenu from "../components/MainMenu/MainMenu"
 //import Table from "../components/Table/Table"
 
-const FoodMenu = () => {
+const FoodMenu = ({pageContext}) => {
+
+  const currentLocale = pageContext.locale
+
+  console.log(currentLocale)
 
   const data = useStaticQuery(graphql`
     query getMenu {
@@ -54,26 +58,66 @@ const FoodMenu = () => {
           <h1>Jídelní lístek</h1>
 
           <section>
-            <h2>PŘEDKRMY</h2>
-            <div className={styles.menu}>
-              {/* <Table /> */}
-              <div className={styles.menuColumn}>
-                <div className={styles.dishName}>
+            <h2>{appetizers[0][currentLocale]}</h2>
+              {appetizers.map((dish, i) => {
+                if (i === 0) {
+                  return
+                } else {
+                  return (
+                    <div key={i} className={styles.menuRow}>
+                      <div className={styles.dishName}>
+                        {dish[currentLocale]}
+                      </div>
+                      <div className={styles.dishPrice}>
+                        {dish.price}
+                      </div>  
+                    </div>
+                  )
+                }
+              }
+            )}
+          </section>
 
-                </div>
-                <div className={styles.dishPrice}>
+          <section>
+            <h2>{mainDishes[0][currentLocale]}</h2>
+              {mainDishes.map((dish, i) => {
+                if (i === 0) {
+                  return
+                } else {
+                  return (
+                    <div key={i} className={styles.menuRow}>
+                      <div className={styles.dishName}>
+                        {dish[currentLocale]}
+                      </div>
+                      <div className={styles.dishPrice}>
+                        {dish.price}
+                      </div>  
+                    </div>
+                  )
+                }
+              }
+            )}
+          </section>
 
-                </div>
-              </div>
-              <div className={styles.menuColumn}>
-                <div className={styles.dishName}>
-
-                </div>
-                <div className={styles.dishPrice}>
-
-                </div>
-              </div>
-            </div>
+          <section>
+            <h2>{deserts[0][currentLocale]}</h2>
+              {deserts.map((dish, i) => {
+                if (i === 0) {
+                  return
+                } else {
+                  return (
+                    <div key={i} className={styles.menuRow}>
+                      <div className={styles.dishName}>
+                        {dish[currentLocale]}
+                      </div>
+                      <div className={styles.dishPrice}>
+                        {dish.price}
+                      </div>  
+                    </div>
+                  )
+                }
+              }
+            )}
           </section>
         </div> 
       </Layout>
