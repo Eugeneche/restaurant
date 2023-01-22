@@ -3,7 +3,7 @@ import { Link } from "gatsby"
 //import LocalizedLink from "./localizedLink"
 //import useTranslations from "./useTranslations"
 
-const Navigation = () => {
+const LanguagesSwitcher = () => {
 
   return (
     <nav>
@@ -24,4 +24,4 @@ const Navigation = () => {
   )
 }
 
-export default Navigation
+export default LanguagesSwitcher

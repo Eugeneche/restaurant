@@ -2,7 +2,7 @@ import React from "react"
 //import { Link } from "gatsby"
 import { StaticImage } from "gatsby-plugin-image"
 import * as styles from "./_MainMenu.module.scss"
-import Navigation from "../navigation"
+import LanguagesSwitcher from "./LanguagesSwitcher"
 import LocalizedLink from "../localizedLink"
 import useTranslations from "../useTranslations"
 
@@ -29,7 +29,7 @@ const MainMenu = () => {
                     <LocalizedLink to="/jidelni-listek">{menu}</LocalizedLink>
                     <LocalizedLink to="/kontakt">{contacts}</LocalizedLink>
                 </div>
-                <Navigation />
+                <LanguagesSwitcher />
             </div>
         </>
     )
