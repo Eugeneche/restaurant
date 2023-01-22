@@ -1,3 +1,8 @@
-import CustomLayout from "./wrapPageElement"
+const React = require("react")
+const { Layout } = require("./src/components/layout")
 
-export const wrapPageElement = CustomLayout
+// Wraps every page in a component
+exports.wrapPageElement = ({ element, props }) => {
+
+  return <Layout {...props}>{element}</Layout>
+}
