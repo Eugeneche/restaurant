@@ -10,15 +10,13 @@ import MainMenu from "../components/MainMenu/MainMenu"
 import Footer from "../components/Footer/Footer"
 import useTranslations from "../components/useTranslations"
 
-const FoodMenu = ({pageContext}) => {
+const FoodMenu = ({pageContext: { locale }}) => {
 
   const { 
     menu
     } = useTranslations()
 
-  const currentLocale = pageContext?.locale
-
-  console.log(currentLocale)
+  console.log(useTranslations())
 
   const data = useStaticQuery(graphql`
     query getMenu {
@@ -62,7 +60,7 @@ const FoodMenu = ({pageContext}) => {
         <h1>{menu}</h1>
 
         <section>
-          <h2>{appetizers[0][currentLocale]}</h2>
+          <h2>{appetizers[0][locale]}</h2>
             {appetizers.map((dish, i) => {
               if (i === 0) {
                 return
@@ -70,7 +68,7 @@ const FoodMenu = ({pageContext}) => {
                 return (
                   <div key={i} className={styles.menuRow}>
                     <div className={styles.dishName}>
-                      {dish[currentLocale]}
+                      {dish[locale]}
                     </div>
                     <div className={styles.dishPrice}>
                       {dish.price}
@@ -83,7 +81,7 @@ const FoodMenu = ({pageContext}) => {
         </section>
 
         <section>
-          <h2>{mainDishes[0][currentLocale]}</h2>
+          <h2>{mainDishes[0][locale]}</h2>
             {mainDishes.map((dish, i) => {
               if (i === 0) {
                 return
@@ -91,7 +89,7 @@ const FoodMenu = ({pageContext}) => {
                 return (
                   <div key={i} className={styles.menuRow}>
                     <div className={styles.dishName}>
-                      {dish[currentLocale]}
+                      {dish[locale]}
                     </div>
                     <div className={styles.dishPrice}>
                       {dish.price}
@@ -104,7 +102,7 @@ const FoodMenu = ({pageContext}) => {
         </section>
 
         <section>
-          <h2>{deserts[0][currentLocale]}</h2>
+          <h2>{deserts[0][locale]}</h2>
             {deserts.map((dish, i) => {
               if (i === 0) {
                 return
@@ -112,7 +110,7 @@ const FoodMenu = ({pageContext}) => {
                 return (
                   <div key={i} className={styles.menuRow}>
                     <div className={styles.dishName}>
-                      {dish[currentLocale]}
+                      {dish[locale]}
                     </div>
                     <div className={styles.dishPrice}>
                       {dish.price}
