@@ -10,11 +10,11 @@ const useTranslations = () => {
   const { rawData } = useStaticQuery(query)
 
   // Simplify the response from GraphQL
-  const simplified = rawData.edges.map(item => {
+  const simplified = rawData?.edges?.map(item => {
 
     return {
       name: item?.node?.name,
-      translations: item.node.childTranslationsJson,
+      translations: item?.node?.childTranslationsJson,
     }
   })
   //console.log(simplified.filter(lang => lang.name === locale)[0])
