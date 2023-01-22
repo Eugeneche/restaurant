@@ -8,9 +8,13 @@ import Seo from "../components/seo"
 import * as styles from "../style/_style.module.scss"
 import MainMenu from "../components/MainMenu/MainMenu"
 import Footer from "../components/Footer/Footer"
-//import Table from "../components/Table/Table"
+import useTranslations from "../components/useTranslations"
 
 const FoodMenu = ({pageContext}) => {
+
+  const { 
+    menu
+    } = useTranslations()
 
   const currentLocale = pageContext?.locale
 
@@ -55,7 +59,7 @@ const FoodMenu = ({pageContext}) => {
       <MainMenu />
       {/* <Layout>  */}
       <div className={styles.container}>
-        <h1>Jídelní lístek</h1>
+        <h1>{menu}</h1>
 
         <section>
           <h2>{appetizers[0][currentLocale]}</h2>
