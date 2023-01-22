@@ -10,9 +10,9 @@ import MainMenu from "../components/MainMenu/MainMenu"
 import Footer from "../components/Footer/Footer"
 //import Table from "../components/Table/Table"
 
-const FoodMenu = ({pageContext: { locale }}) => {
+const FoodMenu = ({pageContext}) => {
 
-  const currentLocale = locale
+  const currentLocale = pageContext?.locale
 
   console.log(currentLocale)
 
