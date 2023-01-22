@@ -17,14 +17,14 @@ const useTranslations = () => {
       translations: item?.node?.childTranslationsJson,
     }
   })
-  //console.log(simplified.filter(lang => lang.name === locale)[0])
+  console.log(simplified)
   // Only return translations for the current locale
-  const translations = simplified?.filter(lang => {
-    console.log(lang.name)
-    return lang?.name === locale
+  const { translations } = simplified?.filter(lang => {
+    console.log(lang?.name === locale)
+    if (lang?.name === locale) return lang
   })[0]
   console.log(translations)
-  return {translations}
+  return translations
 }
 
 export default useTranslations
