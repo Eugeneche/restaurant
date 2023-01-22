@@ -19,12 +19,12 @@ const useTranslations = () => {
   })
   //console.log(simplified.filter(lang => lang.name === locale)[0])
   // Only return translations for the current locale
-  const { translations } = simplified?.filter(lang => {
+  const translations = simplified?.filter(lang => {
     console.log(lang.name)
     return lang?.name === locale
   })[0]
-
-  return translations
+  console.log(translations)
+  return {translations}
 }
 
 export default useTranslations
