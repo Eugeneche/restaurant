@@ -45,9 +45,9 @@ const FoodMenu = ({pageContext: { locale }}) => {
     }
     `
   )
-  const appetizers = data.allMenuXlsxAppetizers.nodes
-  const mainDishes = data.allMenuXlsxMainDishes.nodes
-  const deserts = data.allMenuXlsxDeserts.nodes
+  const appetizers = data?.allMenuXlsxAppetizers?.nodes
+  const mainDishes = data?.allMenuXlsxMainDishes?.nodes
+  const deserts = data?.allMenuXlsxDeserts?.nodes
   //console.log(appetizers)
   
   return (
