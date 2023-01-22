@@ -1,5 +1,9 @@
 @import 'vars';
 
+html, body {
+    overflow: visible !important;
+}
+
 section {
     background: $base-background;
 }

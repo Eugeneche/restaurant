@@ -1,23 +1,22 @@
-/**
- * Layout component that queries for data
- * with Gatsby's useStaticQuery component
- *
- * See: https://www.gatsbyjs.com/docs/how-to/querying-data/use-static-query/
- */
-
 import * as React from "react"
 
 import "./layout.css"
-import Footer from "./Footer/Footer"
+//import Footer from "./Footer/Footer"
+//import MainMenu from "./MainMenu/MainMenu"
 
-const Layout = ({ children }) => {
+const LocaleContext = React.createContext()
+
+const Layout = ({ children, pageContext: { locale } }) => {
 
   return (
-    <>
-      <main>{children}</main>
-      <Footer />
-    </>
+    <LocaleContext.Provider value={ locale }>
+      <div className="layout">
+        {/* <MainMenu /> */}
+        <main>{children}</main>
+        {/* <Footer /> */}
+      </div>
+    </LocaleContext.Provider>
   )
 }
 
-export default Layout
+export { Layout, LocaleContext }

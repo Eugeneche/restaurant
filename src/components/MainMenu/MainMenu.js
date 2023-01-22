@@ -1,25 +1,35 @@
 import React from "react"
-import { Link } from "gatsby"
+//import { Link } from "gatsby"
 import { StaticImage } from "gatsby-plugin-image"
 import * as styles from "./_MainMenu.module.scss"
+import Navigation from "../navigation"
+import LocalizedLink from "../localizedLink"
+import useTranslations from "../useTranslations"
+
 
 //import logo from "../../images/logo.png"
 
 const MainMenu = () => {
 
+    const { menu,
+            about,
+            contacts
+            } = useTranslations()
+
     return (
         <>
             <div className={styles.menuContainer}>
                 <div className={styles.logo}>
-                    <Link to="/">
+                    <LocalizedLink to="/">
                         <StaticImage src="../../images/logo.png" alt="restaurace logo" />
-                    </Link>
+                    </LocalizedLink>
                 </div>
                 <div className={styles.pages}>
-                    <Link to="/o-nas">O nás</Link>
-                    <Link to="/jidelni-listek">Jídelní lístek</Link>
-                    <Link to="/kontakt">Kontakt</Link>
+                    <LocalizedLink to="/o-nas">{about}</LocalizedLink>
+                    <LocalizedLink to="/jidelni-listek">{menu}</LocalizedLink>
+                    <LocalizedLink to="/kontakt">{contacts}</LocalizedLink>
                 </div>
+                <Navigation />
             </div>
         </>
     )

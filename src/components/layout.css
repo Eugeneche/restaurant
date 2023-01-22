@@ -232,7 +232,6 @@ html, body {
   height: 100%;
   font-family: 'Bitter', serif;
   background: #fff4db;
-  /* overflow: hidden; */
 }
 
 #___gatsby {
@@ -240,12 +239,13 @@ html, body {
   width: 100% !important;
 }
 
-#gatsby-focus-wrapper {
+/* #gatsby-focus-wrapper {
   display: flex;
   height: 100%;
   width: 100%;
-  flex-direction: column;
-}
+  flex-direction: column; */
+  /* overflow-y: scroll; */
+/* } */
 
 main {
   flex-grow: 1;

@@ -2,62 +2,75 @@ import * as React from "react"
 //import { Link } from "gatsby"
 import { StaticImage } from "gatsby-plugin-image"
 
-import Layout from "../components/layout"
+//import {Layout} from "../components/layout"
 import Seo from "../components/seo"
 import * as styles from "../style/_index.module.scss"
 import MainMenu from "../components/MainMenu/MainMenu"
 import Header from "../components/Header/Header"
 import ReviewSlider from "../components/Sliders/ReviewSlider"
+import Footer from "../components/Footer/Footer"
+import useTranslations from "../components/useTranslations"
 
 const IndexPage = () => {
   
+  const { 
+    main_page_title,
+    about_text_1,
+    about_text_2,
+    main_page_subtitle_1,
+    main_page_subtitle_2,
+    reviews
+    } = useTranslations()
+
   return (
     
     <div className={styles.parallax}>
       <div className={styles.parallaxBackground}>
-          <StaticImage 
-            src="../images/wood-background.jpg"
-            alt="background"
-            layout="fullWidth"
-            style={{minHeight: "600px"}}
-          />
-          <StaticImage 
-            src="../images/outside_view.jpg"
-            alt="background"
-            layout="fullWidth"
-            /* height={500} */
-            style={{minHeight: "600px"}}
-          />
-          <StaticImage 
-            src="../images/inside_view.jpg"
-            alt="background"
-            layout="fullWidth"
-            /* height={500} */
-            style={{minHeight: "600px"}}
-          />
-        </div>
-        <div className={styles.parallaxContent}>
-      <MainMenu />
-      <Header />
-      <Layout>
+        <StaticImage 
+          src="../images/wood-background.jpg"
+          alt="background"
+          layout="fullWidth"
+          style={{minHeight: "600px"}}
+        />
+        <StaticImage 
+          src="../images/outside_view.jpg"
+          alt="background"
+          layout="fullWidth"
+          /* height={500} */
+          style={{minHeight: "600px"}}
+        />
+        <StaticImage 
+          src="../images/inside_view.jpg"
+          alt="background"
+          layout="fullWidth"
+          /* height={500} */
+          style={{minHeight: "600px"}}
+        />
+      </div>
+
+      <div className={styles.parallaxContent}>
+        <MainMenu />
+      
+        {/* <Layout> */}
+        <Header />
         <div className={styles.container}>
-          <h1>Restaurace Nostalgie</h1>
+          <h1>{main_page_title}</h1>
         </div>
         
-          <section className={`${styles.contentBlock} ${styles.about}`}>
-            <div className={styles.container}>
-              <h2>Kdo jsme</h2>
-              <p>
-              Velkorysý prostor restaurace nabízí své služby 90 hostům a je přístupný dvěma bezbariérovými vstupy přímo z chodníku. Interiér zdobí osm nádherných segmentových valených kleneb, pět masivních žulových sloupů, kované lustry, masivní dubový nábytek doplněný o umělecké kovářské prvky. Prostoru restaurace dominuje nejen unikátní umělecké dílo v podobě rozměrných ručně kovaných hodin. Ale nenapodobitelnou atmosféru restaurace dokreslují repliky čtyř unikátních přístrojů slavných alchymistů z dob císaře Rudolfa II. Jedinečnost restaurace podtrhují první a jediné interiérové sluneční hodiny na světě!!! Stylová vinárna se nachází v suterénu a nabízí příjemné posezení 60 hostům. Dobový ráz, četné umělecké prvky a přístup denního světla zajímavě technicky řešeným pochozím oknem, vytváří ideální prostředí pro klidnou večeři či posezení u skleničky vína. Vinárna je stejně jako restaurace vybavena špičkovým vzduchotechnickým a klimatizačním systémem a vytápěnou podlahou. Na objednávku lze využít služeb obsluhované vyhlídkové terasy, ze které je fantastický výhled na celou historickou část Prahy. Hypermoderní kuchyňský provoz je srdcem restaurace a pro naše hosty vytváří hotová i minutková jídla v té nejvyšší kvalitě. Jako jedna z mála, má restaurace U Špirků denně obměňovaný sortiment hotových jídel a poledních menu za velmi výhodné ceny. Pracovní tým restaurace U Špirků je přesvědčený o tom, že dnes stejně jako před více než stočtyřiceti lety platí, že nejvýhodnější klasické stravování v centru Teplice je v restauraci Nostalgie. Budeme velice rádi, když se sami přijdete přesvědčit.
-              </p>
-            </div> 
-          </section>
+        <section className={`${styles.contentBlock} ${styles.about}`}>
+          <div className={styles.container}>
+            <h2>{main_page_subtitle_1}</h2>
+            <p>
+              {about_text_1}
+            </p>
+          </div> 
+        </section>
 
-          <div className={styles.gap}></div>
+        <div className={styles.gap}></div>
 
-          <section className={styles.contentBlock}>
-            <div className={styles.container}>
-            <h2>Jen gril a dřevěné uhlí</h2>
+        <section className={styles.contentBlock}>
+          <div className={styles.container}>
+            <h2>{main_page_subtitle_2}</h2>
             <div className={styles.offer}>
               <div className={styles.polygonBorger}>
                 <StaticImage 
@@ -71,34 +84,29 @@ const IndexPage = () => {
               <div className={styles.polygonBorger}>
                 <div className={styles.polygonBackground}>
                   <p>
-                    Grilujeme na otevřeném ohni tradičním jihoamerickým způsobem. Maso napíchnuté na špízu má díky tomu příjemně kouřovou chuť a uchovává si svou šťavnatost.
+                    {about_text_2}
                   </p>
                 </div>
               </div>
-              
- 
             </div>
+          </div> 
+        </section>
 
-            </div> 
-          </section>
+        <div className={styles.gap}></div>
 
-          <div className={styles.gap}></div>
+        <section className={styles.contentBlock}>
+          <div className={`${styles.container} ${styles.reviewBlock}`}>
+            <h2>{reviews}</h2>
+            <ReviewSlider />
+          </div> 
+        </section>
 
-          <section className={styles.contentBlock}>
-            <div className={`${styles.container} ${styles.reviewBlock}`}>
-              <h2>Recenze</h2>
-              <ReviewSlider />
-
-            </div> 
-          </section>
-
-          {/* <div className={styles.gap}></div> */}
-        
-
-           
-      </Layout>
+        {/* <div className={styles.gap}></div> */}
+                 
+        <Footer />
+        {/* </Layout> */}
       </div>
-      </div>
+    </div>
     
 )}
 

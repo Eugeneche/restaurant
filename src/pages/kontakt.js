@@ -2,15 +2,19 @@ import * as React from "react"
 import { Link } from "gatsby"
 //import { StaticImage } from "gatsby-plugin-image"
 
-import Layout from "../components/layout"
+//import {Layout} from "../components/layout"
 import Seo from "../components/seo"
 import * as styles from "../style/_style.module.scss"
 
-const Contact = () => {
+const Contact = ({pageContext: { locale }}) => {
+
+  const currentLocale = locale
+
+  console.log(currentLocale)
   
   return (
     <div style={{overflowY: "scroll"}}>
-    <Layout>
+    {/* <Layout> */}
       <div className={styles.container}>
         <Link to="/">Home</Link>
         <h1>Kontakt</h1>
@@ -61,7 +65,7 @@ At the time of the event, Poland’s ambassador to the United Nations Krzysztof 
             </div>
           </section>
       </div>    
-    </Layout>
+    {/* </Layout> */}
     </div>
 )}
 
