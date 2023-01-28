@@ -5,8 +5,8 @@ const ReviewItem = ({review}) => {
 
     return (
         <div className={styles.reviewItem}>
-            <h4>{review.childMdx.frontmatter.name}</h4>
-            <p>{review.childMdx.body}</p>
+            <h4 className={styles.reviewName}>{review.childMdx.frontmatter.name}</h4>
+            <p className={styles.reviewText}>{review.childMdx.body}</p>
         </div>
     )
 }

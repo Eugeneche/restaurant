@@ -17,8 +17,8 @@ const MainMenu = () => {
             } = useTranslations()
 
     return (
-        <>
-            <div className={styles.menuContainer}>
+        <nav className={styles.mainMenu}>
+            <div className={styles.mainMenuContainer}>
                 <div className={styles.logo}>
                     <LocalizedLink to="/">
                         <StaticImage src="../../images/logo.png" alt="restaurace logo" />
@@ -31,7 +31,7 @@ const MainMenu = () => {
                 </div>
                 <LanguagesSwitcher />
             </div>
-        </>
+        </nav>
     )
 }
 

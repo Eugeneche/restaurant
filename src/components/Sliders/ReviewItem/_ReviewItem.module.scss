@@ -4,7 +4,16 @@
     /* background: red; */
     min-width: 100%;
     height: max-content;
-    padding: 30px;
-    border: 1px solid #692700;
+    
+    border: 1px solid $base-color;
     /* margin: auto; */
+
+    .review-name {
+        color: $base-color;
+        padding: 0 5vw;
+    }
+
+    .review-text {
+        padding: 20px 5vw 30px;
+    }
 }

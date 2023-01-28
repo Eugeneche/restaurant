@@ -40,14 +40,25 @@ section {
     transform: translateZ(0);
 }
 
+.transparent {
+    position: absolute;
+    z-index: 10;
+
+    img {
+        height: 620px;
+        object-fit: cover;
+    }
+    
+}
+
 .gap {
     width: 100%; 
-    height: 500px;
+    height: 540px;
     background: none;
 }
 
 .container {
-    max-width: 1200px;
+    max-width: $container;
     margin: auto;
 }
 
@@ -56,7 +67,9 @@ section {
 }
 
 .about {
-    min-height: 600px;
+    min-height: 520px;
+    display: flex;
+    flex-direction: column;
 }
 
 .offer {
@@ -86,6 +99,7 @@ section {
 }
 
 .review-block {
+    width: 60%;
     overflow: hidden;
 }
 

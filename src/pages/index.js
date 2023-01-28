@@ -10,6 +10,7 @@ import Header from "../components/Header/Header"
 import ReviewSlider from "../components/Sliders/ReviewSlider"
 import Footer from "../components/Footer/Footer"
 import useTranslations from "../components/useTranslations"
+import transparent from "../images/transparent_2.png" 
 
 const IndexPage = () => {
   
@@ -25,12 +26,16 @@ const IndexPage = () => {
   return (
     
     <div className={styles.parallax}>
+      <MainMenu />
+      <div className={styles.transparent}>
+        <img src={transparent}></img>
+      </div>
       <div className={styles.parallaxBackground}>
         <StaticImage 
-          src="../images/wood-background.jpg"
+          src="../images/teplice_panorama_1.jpg"
           alt="background"
           layout="fullWidth"
-          style={{minHeight: "600px"}}
+          style={{minHeight: "620px", marginBottom: "0px"}}
         />
         <StaticImage 
           src="../images/outside_view.jpg"
@@ -49,20 +54,26 @@ const IndexPage = () => {
       </div>
 
       <div className={styles.parallaxContent}>
-        <MainMenu />
+        
       
         {/* <Layout> */}
         <Header />
-        <div className={styles.container}>
-          <h1>{main_page_title}</h1>
-        </div>
-        
-        <section className={`${styles.contentBlock} ${styles.about}`}>
-          <div className={styles.container}>
+
+
+        <section className={styles.contentBlock}>
+          <div className={`${styles.container} ${styles.about}`}>
+            <h1>{main_page_title}</h1>
             <h2>{main_page_subtitle_1}</h2>
             <p>
               {about_text_1}
             </p>
+            <StaticImage 
+              src="../images/dish_1.jpg"
+              alt="meat"
+              layout="fixed"
+              style={{alignSelf: "center"}}
+              width={200}
+            />
           </div> 
         </section>
 

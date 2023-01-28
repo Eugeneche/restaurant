@@ -8,14 +8,14 @@ const Header = () => {
 
     return (
         <div className={styles.header}>
-            <div>
+{/*             <div>
                 <StaticImage 
-                    src="../../images/nostalgie_front.png" 
+                    src="../../images/transparent.png" 
                     alt="restaurant Nostalgie front"
                     layout="constrained"
                     height={500} 
                 />
-            </div>
+            </div> */}
 
 
         </div>
