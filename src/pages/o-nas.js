@@ -4,7 +4,7 @@ import { Link } from "gatsby"
 
 //import {Layout} from "../components/layout"
 import Seo from "../components/seo"
-import * as styles from "../style/_style.module.scss"
+import * as styles from "../style/_pages.module.scss"
 
 const About = () => {
   

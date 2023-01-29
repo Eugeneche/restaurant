@@ -45,6 +45,15 @@ const query = graphql`
             about_text_1
             about_text_2
             reviews
+            your_name
+            your_message
+            your_phone
+            your_email
+            name
+            phone
+            email
+            message
+            send
           }
         }
       }

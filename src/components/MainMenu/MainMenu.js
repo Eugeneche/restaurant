@@ -7,8 +7,6 @@ import LocalizedLink from "../localizedLink"
 import useTranslations from "../useTranslations"
 
 
-//import logo from "../../images/logo.png"
-
 const MainMenu = () => {
 
     const { menu,

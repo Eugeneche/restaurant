@@ -1,11 +1,7 @@
 import * as React from "react"
 import { useStaticQuery, graphql } from "gatsby"
-//import { Link } from "gatsby"
-//import { StaticImage } from "gatsby-plugin-image"
-
-//import {Layout} from "../components/layout"
 import Seo from "../components/seo"
-import * as styles from "../style/_style.module.scss"
+import * as styles from "../style/_pages.module.scss"
 import MainMenu from "../components/MainMenu/MainMenu"
 import Footer from "../components/Footer/Footer"
 import useTranslations from "../components/useTranslations"
@@ -55,7 +51,7 @@ const FoodMenu = ({pageContext: { locale }}) => {
   return (
     <div className={styles.pagesWrapper}>
       <MainMenu />
-      {/* <Layout>  */}
+      <div className={styles.gap}></div>
       <div className={styles.container}>
         <h1>{menu}</h1>
 
@@ -124,7 +120,6 @@ const FoodMenu = ({pageContext: { locale }}) => {
         
       </div> 
       <Footer />
-      {/* </Layout> */}
     </div>
 
 )}
