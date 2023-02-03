@@ -5,6 +5,8 @@ import { LocaleContext } from "../layout"
 import LocalizedLink from "../localizedLink"
 //import useTranslations from "./useTranslations"
 
+const isBrowser = typeof window !== "undefined"
+
 const LanguagesSwitcher = () => {
 
   const locale = React.useContext(LocaleContext)
@@ -15,6 +17,11 @@ const LanguagesSwitcher = () => {
   if (window.location.pathname.match(`/${locale}/`)) {
     path = window.location.pathname.slice(3)
   } else path = window.location.pathname */
+
+  if (!isBrowser) {
+    return
+  }
+
   const path = () => {
     if (window.location.pathname.match(`/${locale}/`)) {
       return window.location.pathname.slice(3)
