@@ -1,22 +1,39 @@
-import React from "react"
+import React, { useState } from "react"
 import { Link } from "gatsby"
 import * as styles from "./_MainMenu.module.scss"
-//import LocalizedLink from "./localizedLink"
+import { LocaleContext } from "../layout"
+import LocalizedLink from "../localizedLink"
 //import useTranslations from "./useTranslations"
 
 const LanguagesSwitcher = () => {
 
+  const locale = React.useContext(LocaleContext)
+  console.log(window.location.pathname)
+  console.log(locale)
+
+/*   let path = ''
+  if (window.location.pathname.match(`/${locale}/`)) {
+    path = window.location.pathname.slice(3)
+  } else path = window.location.pathname */
+  const path = () => {
+    if (window.location.pathname.match(`/${locale}/`)) {
+      return window.location.pathname.slice(3)
+    } else { 
+      return window.location.pathname
+    }
+  }
+  console.log(path())
   return (
     <nav className={styles.languagesSwitcher}>
-      <Link to="/" hrefLang="ru">
+      <Link to={`${path()}`} hrefLang="cs">
         Čeština
       </Link>
       {` `}|{` `}
-      <Link to="/en" hrefLang="en">
+      <Link to={`/en${path()}`} hrefLang="en">
         English
       </Link>
       {` `}|{` `}
-      <Link to="/ru" hrefLang="ru">
+      <Link to={`/ru${path()}`} hrefLang="ru">
         Русский
       </Link>
     </nav>

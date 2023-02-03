@@ -18,6 +18,24 @@ html, body {
     padding-top: 50px;
 } */
 
+/* o-nas (about) */
+
+.about-text {
+    width: 80%;
+    margin: auto;
+}
+
+.gallery {
+    width: 90%;
+    margin: auto;
+    display: grid;
+    grid-template-columns: 
+    repeat(auto-fit, minmax(300px, 1fr));
+    gap: 10px;
+}
+
+/* end of o-nas (about) */
+
 /* menu (Jídelní lístek) */
 
 .menu-row {

@@ -44,6 +44,7 @@ const query = graphql`
             main_page_subtitle_2
             about_text_1
             about_text_2
+            about_text_3
             reviews
             your_name
             your_message

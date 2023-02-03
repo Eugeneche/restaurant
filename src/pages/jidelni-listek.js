@@ -12,7 +12,7 @@ const FoodMenu = ({pageContext: { locale }}) => {
     menu
     } = useTranslations()
 
-  console.log(useTranslations())
+  //console.log(pageContext)
 
   const data = useStaticQuery(graphql`
     query getMenu {

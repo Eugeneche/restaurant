@@ -16,7 +16,7 @@ const Contact = ({pageContext: { locale }}) => {
 
   const currentLocale = locale
 
-  console.log(currentLocale)
+  //console.log(currentLocale)
   
   return (
     <div className={styles.pagesWrapper}>
@@ -26,12 +26,12 @@ const Contact = ({pageContext: { locale }}) => {
         <h1>{contacts}</h1>
         <Form />
         <div className={styles.map}>
-          <iframe src="https://storage.googleapis.com/maps-solutions-44bciiyj83/locator-plus/ckur/locator-plus.html"
-            width="100%" 
-            /* height="50vh" */
-            style={{border: 0, height: "100vh"}}
-            loading="lazy">
-          </iframe>
+        <iframe src="https://storage.googleapis.com/maps-solutions-44bciiyj83/commutes/zacl/commutes.html"
+          width="100%" 
+          style={{border: 0, height: "100vh"}}
+          loading="lazy">
+        </iframe>
+        
         </div>
       </div>    
       <Footer />
