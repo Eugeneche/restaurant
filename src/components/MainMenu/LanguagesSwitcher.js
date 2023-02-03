@@ -10,7 +10,7 @@ const isBrowser = typeof window !== "undefined"
 const LanguagesSwitcher = () => {
 
   const locale = React.useContext(LocaleContext)
-  console.log(window.location.pathname)
+  //console.log(window.location.pathname)
   console.log(locale)
 
 /*   let path = ''
