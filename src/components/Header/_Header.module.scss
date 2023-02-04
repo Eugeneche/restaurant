@@ -3,6 +3,17 @@
     margin-bottom: 30px;
     height: 590px;
 
+    h1 {
+        position: relative;
+        
+        top: 50%;
+        transform: translateY(-50%);
+        background: #fdf2e7cf;
+        width: fit-content;
+        margin: auto;
+        padding: 5px 15px;
+    }
+
     .parallax-image {
         width: 100%;
     }

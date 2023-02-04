@@ -39,6 +39,7 @@ const query = graphql`
             menu
             about
             contacts
+            header_title
             main_page_title
             main_page_subtitle_1
             main_page_subtitle_2

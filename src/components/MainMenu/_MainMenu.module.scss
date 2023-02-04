@@ -1,6 +1,6 @@
 @import '../../style/vars';
 
-.mainMenu {
+.main-menu-full {
     position: absolute;
     width: 100%;
     height: 90px;
@@ -16,6 +16,7 @@
     justify-content: space-between;
     align-items: center;
     /* margin-top: 40px; */
+    transition: right ease 0.5s;
 
     .logo {
         max-width: 250px;
@@ -41,5 +42,72 @@
         color: #692700;
         font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     }
+}
+
+/* mobile */
+
+.main-menu-mobile {
+    position: fixed;
+    top: 0;
+    left: 0;
+    /* right: -100vw; */
+    bottom: 0;
+    background: #2c2c2cad;
+
+    .main-menu-container {
+        position: absolute;
+        height: 100%;
+        margin: 0;
+        padding: 50px 20px 10px;
+        background: white;
+        flex-direction: column;
+        width: 300px;
+
+        img.close {
+            position: absolute;
+            width: 30px;
+            right: 20px;
+            top: 20px;
+        }
+
+        .logo {
+            max-width: 150px;
+            transform: rotate(0deg);
+        }
+
+        .pages {
+            display: flex;
+            flex-direction: column;
+            align-self: self-start;
+
+            a {
+               margin: 5px 0;
+            }  
+        }
+    }
+}
+
+.hamburger-menu {
+    position: absolute; 
+    top: 20px;
+    right: 20px;
+}
+
+@media screen and (max-width: 1280px) {
     
+    .main-menu-container {
+        margin: 0 20px;
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    
+    .main-menu-full {
+        display: none;
+    }
+
+    .main-menu-mobile {
+        display: flex;
+        flex-direction: column;
+    }
 }

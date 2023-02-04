@@ -1,23 +1,14 @@
 import React from "react"
-//import { Link } from "gatsby"
-import { StaticImage } from "gatsby-plugin-image"
 import * as styles from "./_Header.module.scss"
-//import b from "../../images/wood-background.jpg"
+import useTranslations from "../useTranslations"
 
 const Header = () => {
 
+    const { header_title } = useTranslations()
+
     return (
         <div className={styles.header}>
-{/*             <div>
-                <StaticImage 
-                    src="../../images/transparent.png" 
-                    alt="restaurant Nostalgie front"
-                    layout="constrained"
-                    height={500} 
-                />
-            </div> */}
-
-
+            <h1>{header_title}</h1>
         </div>
     )
 }

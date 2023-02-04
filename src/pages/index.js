@@ -10,7 +10,7 @@ import Header from "../components/Header/Header"
 import ReviewSlider from "../components/Sliders/ReviewSlider"
 import Footer from "../components/Footer/Footer"
 import useTranslations from "../components/useTranslations"
-import transparent from "../images/transparent_2.png" 
+//import transparent from "../images/transparent_2.png" 
 
 const IndexPage = () => {
   
@@ -28,7 +28,7 @@ const IndexPage = () => {
     <div className={styles.parallax}>
       <MainMenu />
       <div className={styles.transparent}>
-        <img src={transparent}></img>
+        {/* <img src={transparent}></img> */}
       </div>
       <div className={styles.parallaxBackground}>
         <StaticImage 
@@ -62,8 +62,8 @@ const IndexPage = () => {
 
         <section className={styles.contentBlock}>
           <div className={`${styles.container} ${styles.about}`}>
-            <h1>{main_page_title}</h1>
-            <h2>{main_page_subtitle_1}</h2>
+            <h2>{main_page_title}</h2>
+            <h3>{main_page_subtitle_1}</h3>
             <p>
               {about_text_1}
             </p>
@@ -81,7 +81,7 @@ const IndexPage = () => {
 
         <section className={styles.contentBlock}>
           <div className={styles.container}>
-            <h2>{main_page_subtitle_2}</h2>
+            <h3>{main_page_subtitle_2}</h3>
             <div className={styles.offer}>
               <div className={styles.polygonBorger}>
                 <StaticImage 
@@ -107,7 +107,7 @@ const IndexPage = () => {
 
         <section className={styles.contentBlock}>
           <div className={`${styles.container} ${styles.reviewBlock}`}>
-            <h2>{reviews}</h2>
+            <h3>{reviews}</h3>
             <ReviewSlider />
           </div> 
         </section>

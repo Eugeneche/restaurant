@@ -248,7 +248,7 @@ h1 {
   color: var(--base-color);
 }
 
-h2 {
+h2, h3 {
   color: var(--base-color);
 }
 
