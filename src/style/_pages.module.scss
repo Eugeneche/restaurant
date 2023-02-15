@@ -38,17 +38,34 @@ html, body {
 
 /* menu (Jídelní lístek) */
 
-.menu-row {
-    display: flex;
+.menu-list {
+    width: 90%;
+    margin: auto;
 
-    .dish-name {
-        width: 60%;
+    .menu-row {
+        display: flex;
+    
+        .dish-name {
+            width: 85%;
+            padding-left: 15px;
+        }
+    
+        .dish-price {
+            width: 15%;
+            text-align: center;
+        }
     }
 
-    .dish-price {
-        width:40%;
+    .menu-row:nth-child(even) {
+        background: rgb(255, 239, 195);
     }
 }
+
+.menu-list:last-child {
+    margin-bottom: 50px;
+}
+
+
 
 /* end of menu (Jídelní lístek) */
 
@@ -59,4 +76,26 @@ html, body {
 }
 
 /* end of contacts */
+
+@media screen and (max-width: 1280px) {
+    
+    .container {
+        margin: 0 5vw;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    
+    .menu-list  {
+        width: 100%;
+
+        .menu-row {
+    
+            .dish-name {
+                width: 85%;
+                padding-left: 1vw;
+            }
+        }
+    }
+}
 

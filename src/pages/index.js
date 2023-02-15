@@ -24,25 +24,24 @@ const IndexPage = () => {
     } = useTranslations()
 
   return (
-    
+  <div className={styles.indexWrapper}>
+    <MainMenu />
     <div className={styles.parallax}>
-      <MainMenu />
-      <div className={styles.transparent}>
-        {/* <img src={transparent}></img> */}
-      </div>
+      
+
       <div className={styles.parallaxBackground}>
         <StaticImage 
           src="../images/teplice_panorama_1.jpg"
           alt="background"
           layout="fullWidth"
-          style={{minHeight: "620px", marginBottom: "0px"}}
+          style={{minHeight: "610px"/* , marginBottom: "10vh" */}}
         />
         <StaticImage 
           src="../images/outside_view.jpg"
           alt="background"
           layout="fullWidth"
           /* height={500} */
-          style={{minHeight: "600px"}}
+          style={{minHeight: "calc(600px + 6vh)"}}
         />
         <StaticImage 
           src="../images/inside_view.jpg"
@@ -54,7 +53,7 @@ const IndexPage = () => {
       </div>
 
       <div className={styles.parallaxContent}>
-        
+      
       
         {/* <Layout> */}
         <Header />
@@ -118,7 +117,7 @@ const IndexPage = () => {
         {/* </Layout> */}
       </div>
     </div>
-    
+  </div>  
 )}
 
 /**

@@ -55,7 +55,7 @@ const FoodMenu = ({pageContext: { locale }}) => {
       <div className={styles.container}>
         <h1>{menu}</h1>
 
-        <section>
+        <section className={styles.menuList}>
           <h2>{appetizers[0][locale]}</h2>
             {appetizers.map((dish, i) => {
               if (i === 0) {
@@ -76,7 +76,7 @@ const FoodMenu = ({pageContext: { locale }}) => {
           )}
         </section>
 
-        <section>
+        <section className={styles.menuList}>
           <h2>{mainDishes[0][locale]}</h2>
             {mainDishes.map((dish, i) => {
               if (i === 0) {
@@ -97,7 +97,7 @@ const FoodMenu = ({pageContext: { locale }}) => {
           )}
         </section>
 
-        <section>
+        <section className={styles.menuList}>
           <h2>{deserts[0][locale]}</h2>
             {deserts.map((dish, i) => {
               if (i === 0) {

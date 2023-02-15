@@ -30,7 +30,11 @@ const MainMenu = () => {
     }
 
     const styleMainMenuContainerOn = {
+        position: "fixed",
+        height: "100vh",
         right: "0",
+        top: "0",
+        bottom: "0",
         transition: "right .5s ease"
     }
 
