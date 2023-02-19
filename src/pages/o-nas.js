@@ -7,6 +7,7 @@ import Seo from "../components/seo"
 import * as styles from "../style/_pages.module.scss"
 import MainMenu from "../components/MainMenu/MainMenu"
 import useTranslations from "../components/useTranslations"
+import Footer from "../components/Footer/Footer"
 
 const About = () => {
 
@@ -43,6 +44,7 @@ const About = () => {
           })}
         </div>
       </div>    
+      <Footer />
     </div>
   )
 }
@@ -55,15 +57,3 @@ const About = () => {
 export const Head = () => <Seo title="O nas" />
 
 export default About
-
-/* export const query = graphql`
-query GetGallery {
-  allFile(filter: {sourceInstanceName: {eq: "gallery"}}) {
-    nodes {
-      childImageSharp {
-        gatsbyImageData
-      }
-    }
-  }
-}
-` */

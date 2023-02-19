@@ -33,6 +33,9 @@ const Contact = ({pageContext: { locale }}) => {
         </iframe>
         
         </div>
+{/*         <div>
+          <img src="https://maps.googleapis.com/maps/api/staticmap?center=50.639976,13.836277&format=gif&zoom=12&size=400x400&key=AIzaSyD1MCgHNbPvvQ29mYFlS5AmL-Vpva-uzSA"></img>
+        </div> */}
       </div>    
       <Footer />
     </div>

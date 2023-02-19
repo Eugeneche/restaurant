@@ -14,10 +14,6 @@ html, body {
     margin: auto;
 }
 
-/* .pages-wrapper {
-    padding-top: 50px;
-} */
-
 /* o-nas (about) */
 
 .about-text {
@@ -27,7 +23,7 @@ html, body {
 
 .gallery {
     width: 90%;
-    margin: auto;
+    margin: 50px auto;
     display: grid;
     grid-template-columns: 
     repeat(auto-fit, minmax(300px, 1fr));
@@ -96,6 +92,17 @@ html, body {
                 padding-left: 1vw;
             }
         }
+    }
+}
+
+@media screen and (max-width: 550px) {
+    
+    .map {
+        margin: 30px 0;
+    }
+
+    .commutes {
+        min-width: 320px !important;
     }
 }
 

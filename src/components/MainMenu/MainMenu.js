@@ -10,7 +10,8 @@ import hamburgerMenu from "../../images/hamb_menu.svg"
 
 const MainMenu = () => {
 
-    const { menu,
+    const { home,
+            menu,
             about,
             contacts
             } = useTranslations()
@@ -73,6 +74,7 @@ const MainMenu = () => {
                     </div>
                     <LanguagesSwitcher />
                     <div className={styles.pages}>
+                        <LocalizedLink to="/">{home}</LocalizedLink>
                         <LocalizedLink to="/o-nas">{about}</LocalizedLink>
                         <LocalizedLink to="/jidelni-listek">{menu}</LocalizedLink>
                         <LocalizedLink to="/kontakt">{contacts}</LocalizedLink>

@@ -17,6 +17,9 @@ const ReviewSlider = () => {
             frontmatter {
               date
               name
+              cs
+              en
+              ru
             }
             body
             id

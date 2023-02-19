@@ -36,6 +36,7 @@ const query = graphql`
         node {
           name
           childTranslationsJson {
+            home
             menu
             about
             contacts

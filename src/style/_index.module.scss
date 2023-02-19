@@ -41,20 +41,8 @@ section {
 }
 
 .parallax-content {
-    /* position: relative; */
     transform: translateZ(0);
 }
-
-/* .transparent {
-    position: absolute;
-    z-index: 10;
-
-    img {
-        height: 620px;
-        object-fit: cover;
-    }
-    
-} */
 
 .gap {
     width: 100%; 
@@ -144,14 +132,31 @@ section {
                 margin: 0;
             }
         }
-
-
     }
+}
+
+@media screen and (max-width: 667px) {
 
     .offer {
-        display: grid;
-        grid-template-columns: 48% 48%;
-        grid-template-rows: 500px;
-        column-gap: 4%;
+        grid-template-columns: 100%;
+        grid-template-rows: 290px 290px;
+        row-gap: 4%;
+        justify-items: center;
+
+        .polygon-borger {
+            height: 100%;
+            max-width: 400px;
+        }
+    }
+
+    .review-block {
+        width: 80%;
+    }
+}
+
+@media screen and (max-width: 550px) {
+
+    .review-block {
+        width: 100%;
     }
 }
