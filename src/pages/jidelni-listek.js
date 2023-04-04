@@ -12,8 +12,6 @@ const FoodMenu = ({pageContext: { locale }}) => {
     menu
     } = useTranslations()
 
-  //console.log(pageContext)
-
   const data = useStaticQuery(graphql`
     query getMenu {
       allMenuXlsxAppetizers {
@@ -46,10 +44,9 @@ const FoodMenu = ({pageContext: { locale }}) => {
   const appetizers = data?.allMenuXlsxAppetizers?.nodes
   const mainDishes = data?.allMenuXlsxMainDishes?.nodes
   const deserts = data?.allMenuXlsxDeserts?.nodes
-  //console.log(appetizers)
   
   return (
-    <div className={styles.pagesWrapper}>
+    <div>
       <MainMenu />
       <div className={styles.gap}></div>
       <div className={styles.container}>

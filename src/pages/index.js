@@ -34,30 +34,25 @@ const IndexPage = () => {
           src="../images/teplice_panorama_1.jpg"
           alt="background"
           layout="fullWidth"
-          style={{minHeight: "610px"/* , marginBottom: "10vh" */}}
+          style={{minHeight: "610px"}}
         />
         <StaticImage 
           src="../images/outside_view.jpg"
           alt="background"
           layout="fullWidth"
-          /* height={500} */
           style={{minHeight: "calc(600px + 6vh)"}}
         />
         <StaticImage 
           src="../images/inside_view.jpg"
           alt="background"
           layout="fullWidth"
-          /* height={500} */
           style={{minHeight: "600px"}}
         />
       </div>
 
       <div className={styles.parallaxContent}>
-      
-      
-        {/* <Layout> */}
-        <Header />
 
+        <Header />
 
         <section className={styles.contentBlock}>
           <div className={`${styles.container} ${styles.about}`}>
@@ -86,8 +81,6 @@ const IndexPage = () => {
                 <StaticImage 
                   src="../images/meat.jpg"
                   alt="meat"
-                  /* layout="constrained" */
-                  /* height={500} */
                   style={{height: "100%"}}
                 />
               </div>
@@ -110,11 +103,9 @@ const IndexPage = () => {
             <ReviewSlider />
           </div> 
         </section>
-
-        {/* <div className={styles.gap}></div> */}
                  
         <Footer />
-        {/* </Layout> */}
+
       </div>
     </div>
   </div>  
