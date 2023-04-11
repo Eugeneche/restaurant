@@ -31,19 +31,20 @@ const IndexPage = () => {
 
       <div className={styles.parallaxBackground}>
         <StaticImage 
-          src="../images/teplice_panorama_1.jpg"
+          src="../images/fasade.jpg"
           alt="background"
           layout="fullWidth"
-          style={{minHeight: "610px"}}
+          /* height={600} */
+          style={{minHeight: "600px"}}
         />
         <StaticImage 
-          src="../images/outside_view.jpg"
+          src="../images/outside.jpg"
           alt="background"
           layout="fullWidth"
           style={{minHeight: "calc(600px + 6vh)"}}
         />
         <StaticImage 
-          src="../images/inside_view.jpg"
+          src="../images/interior.jpg"
           alt="background"
           layout="fullWidth"
           style={{minHeight: "600px"}}

@@ -50,7 +50,7 @@ const MainMenu = () => {
                 <div className={styles.mainMenuContainer}>
                     <div className={styles.logo}>
                         <LocalizedLink to="/">
-                            <StaticImage src="../../images/logo.png" alt="restaurace logo" />
+                            <StaticImage src="../../images/logo_rect.png" alt="restaurace logo" />
                         </LocalizedLink>
                     </div>
                     <div className={styles.pages}>
