@@ -40,6 +40,26 @@ section {
     flex-direction: column;
 }
 
+.second {
+    position: absolute;
+    top: 600px;
+    height: 85vh;
+    width: inherit;
+    z-index: 1;
+}
+
+.third {
+    position: absolute;
+    top: 1248px;
+    height: 85vh;
+    width: inherit;
+    z-index: 1;
+}
+
+.layer-top {
+    z-index: 2;
+}
+
 .parallax-content {
     transform: translateZ(0);
 }

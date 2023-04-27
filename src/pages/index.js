@@ -1,4 +1,4 @@
-import * as React from "react"
+import React, { useState, useRef, useEffect } from "react"
 //import { Link } from "gatsby"
 import { StaticImage } from "gatsby-plugin-image"
 
@@ -13,6 +13,55 @@ import useTranslations from "../components/useTranslations"
 //import transparent from "../images/transparent_2.png" 
 
 const IndexPage = () => {
+
+  const [isIntersectingOne, setIsIntersectingOne] = useState(false)
+  const [isIntersectingTwo, setIsIntersectingTwo] = useState(false)
+  const refOne = useRef(null)
+  const refTwo = useRef(null)
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        setIsIntersectingOne(entry.isIntersecting)
+        console.log(entry)
+      },
+      { threshold: 0.5 }
+    )
+    console.log(isIntersectingOne)
+    console.log(refOne.current)
+    observer.observe(refOne.current)
+    return () => observer.disconnect()
+  }, [isIntersectingOne])
+
+    useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        setIsIntersectingTwo(entry.isIntersecting)
+        console.log(entry)
+      },
+      { threshold: 0.7 }
+    )
+    console.log(isIntersectingTwo)
+    console.log(refTwo.current)
+    observer.observe(refTwo.current)
+    return () => observer.disconnect()
+  }, [isIntersectingTwo])
+
+  useEffect(() => {
+    if (isIntersectingOne) {
+      refOne.current.classList.add(styles.layerTop)
+    } else {
+      refOne.current.classList.remove(styles.layerTop)
+    }
+  }, [isIntersectingOne])
+
+  useEffect(() => {
+    if (isIntersectingTwo) {
+      refTwo.current.classList.add(styles.layerTop)
+    } else {
+      refTwo.current.classList.remove(styles.layerTop)
+    }
+  }, [isIntersectingTwo])
   
   const { 
     main_page_title,
@@ -37,18 +86,36 @@ const IndexPage = () => {
           /* height={600} */
           style={{minHeight: "600px"}}
         />
-        <StaticImage 
-          src="../images/outside.jpg"
-          alt="background"
-          layout="fullWidth"
-          style={{minHeight: "calc(600px + 6vh)"}}
-        />
-        <StaticImage 
-          src="../images/interior.jpg"
-          alt="background"
-          layout="fullWidth"
-          style={{minHeight: "600px"}}
-        />
+        <div className={styles.second} ref={refOne}
+          /* style={{ 
+              position: "absolute",
+              top: "600px",
+              height: "85vh",
+              width: "inherit",
+              zIndex: 1
+            }} */>
+          <StaticImage 
+            src="../images/outside.jpg"
+            alt="background"
+            layout="fullWidth"
+            style={{ height: "100%" }}
+          />
+        </div>
+        <div className={styles.third} ref={refTwo}
+          /* style={{ 
+              position: "absolute",
+              top: "1248px",
+              height: "85vh",
+              width: "inherit",
+              zIndex: 1
+            }} */>
+          <StaticImage 
+            src="../images/interior.jpg"
+            alt="background"
+            layout="fullWidth"
+            style={{ height: "100%" }}
+          />
+        </div>
       </div>
 
       <div className={styles.parallaxContent}>
