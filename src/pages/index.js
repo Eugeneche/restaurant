@@ -27,8 +27,7 @@ const IndexPage = () => {
       },
       { threshold: 0.5 }
     )
-    console.log(isIntersectingOne)
-    console.log(refOne.current)
+
     observer.observe(refOne.current)
     return () => observer.disconnect()
   }, [isIntersectingOne])
@@ -37,12 +36,10 @@ const IndexPage = () => {
     const observer = new IntersectionObserver(
       ([entry]) => {
         setIsIntersectingTwo(entry.isIntersecting)
-        console.log(entry)
       },
       { threshold: 0.7 }
     )
-    console.log(isIntersectingTwo)
-    console.log(refTwo.current)
+    
     observer.observe(refTwo.current)
     return () => observer.disconnect()
   }, [isIntersectingTwo])
@@ -86,14 +83,7 @@ const IndexPage = () => {
           /* height={600} */
           style={{minHeight: "600px"}}
         />
-        <div className={styles.second} ref={refOne}
-          /* style={{ 
-              position: "absolute",
-              top: "600px",
-              height: "85vh",
-              width: "inherit",
-              zIndex: 1
-            }} */>
+        <div className={styles.second} ref={refOne}>
           <StaticImage 
             src="../images/outside.jpg"
             alt="background"
@@ -101,14 +91,7 @@ const IndexPage = () => {
             style={{ height: "100%" }}
           />
         </div>
-        <div className={styles.third} ref={refTwo}
-          /* style={{ 
-              position: "absolute",
-              top: "1248px",
-              height: "85vh",
-              width: "inherit",
-              zIndex: 1
-            }} */>
+        <div className={styles.third} ref={refTwo}>
           <StaticImage 
             src="../images/interior.jpg"
             alt="background"

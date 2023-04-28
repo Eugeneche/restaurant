@@ -69,7 +69,7 @@ const MainMenu = () => {
                     <img className={styles.close} src={close} alt="close icon" onClick={() => setIsShow(false)}></img>
                     <div className={styles.logo}>
                         <LocalizedLink to="/">
-                            <StaticImage src="../../images/logo.png" alt="restaurace logo" />
+                            <StaticImage src="../../images/logo_rect.png" alt="restaurace logo" />
                         </LocalizedLink>
                     </div>
                     <LanguagesSwitcher />

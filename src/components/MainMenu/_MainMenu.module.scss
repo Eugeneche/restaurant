@@ -19,7 +19,6 @@
 
     .logo {
         max-width: 150px;
-        /* transform: rotate(-7deg); */
     }
 
     .pages {
@@ -49,7 +48,6 @@
     position: fixed;
     top: 0;
     left: 0;
-    /* right: -100vw; */
     bottom: 0;
     background: #2c2c2cad;
 
@@ -60,6 +58,7 @@
         padding: 50px 20px 10px;
         background: white;
         flex-direction: column;
+        justify-content: start;
         width: 300px;
 
         img.close {
@@ -71,13 +70,14 @@
 
         .logo {
             max-width: 150px;
-            transform: rotate(0deg);
+            margin: 50px 0;
         }
 
         .pages {
             display: flex;
             flex-direction: column;
             align-self: self-start;
+            margin: 50px 0;
 
             a {
                margin: 5px 0;
