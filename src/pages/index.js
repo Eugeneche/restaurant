@@ -23,9 +23,8 @@ const IndexPage = () => {
     const observer = new IntersectionObserver(
       ([entry]) => {
         setIsIntersectingOne(entry.isIntersecting)
-        console.log(entry)
       },
-      { threshold: 0.5 }
+      { threshold: 0.4 }
     )
 
     observer.observe(refOne.current)
@@ -80,7 +79,6 @@ const IndexPage = () => {
           src="../images/fasade.jpg"
           alt="background"
           layout="fullWidth"
-          /* height={600} */
           style={{minHeight: "600px"}}
         />
         <div className={styles.second} ref={refOne}>
@@ -116,8 +114,8 @@ const IndexPage = () => {
               src="../images/dish_1.jpg"
               alt="meat"
               layout="fixed"
-              style={{alignSelf: "center"}}
-              width={200}
+              style={{alignSelf: "center", borderRadius: "10px"}}
+              width={220}
             />
           </div> 
         </section>

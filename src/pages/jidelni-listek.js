@@ -22,7 +22,7 @@ const FoodMenu = ({pageContext: { locale }}) => {
           ru
         }
       }
-      allMenuXlsxDeserts {
+      allMenuXlsxDesserts {
         nodes {
           cs
           en
@@ -38,12 +38,21 @@ const FoodMenu = ({pageContext: { locale }}) => {
           ru
         }
       }
+      allMenuXlsxDrinks {
+        nodes {
+          cs
+          en
+          price
+          ru
+        }
+      }
     }
     `
   )
   const appetizers = data?.allMenuXlsxAppetizers?.nodes
   const mainDishes = data?.allMenuXlsxMainDishes?.nodes
-  const deserts = data?.allMenuXlsxDeserts?.nodes
+  const desserts = data?.allMenuXlsxDesserts?.nodes
+  const drinks = data?.allMenuXlsxDrinks?.nodes
   
   return (
     <div>
@@ -95,8 +104,29 @@ const FoodMenu = ({pageContext: { locale }}) => {
         </section>
 
         <section className={styles.menuList}>
-          <h2>{deserts[0][locale]}</h2>
-            {deserts.map((dish, i) => {
+          <h2>{desserts[0][locale]}</h2>
+            {desserts.map((dish, i) => {
+              if (i === 0) {
+                return
+              } else {
+                return (
+                  <div key={i} className={styles.menuRow}>
+                    <div className={styles.dishName}>
+                      {dish[locale]}
+                    </div>
+                    <div className={styles.dishPrice}>
+                      {dish.price}
+                    </div>  
+                  </div>
+                )
+              }
+            }
+          )}
+        </section>
+
+        <section className={styles.menuList}>
+          <h2>{drinks[0][locale]}</h2>
+            {drinks.map((dish, i) => {
               if (i === 0) {
                 return
               } else {
