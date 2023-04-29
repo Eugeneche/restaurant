@@ -32,7 +32,7 @@ const ReviewSlider = () => {
   const[leftValue, setLeftValue] = useState(0)
   const reviews = query.allFile.nodes
 
-/*   useEffect(() => {
+  useEffect(() => {
 
     const moveLeft = setInterval(() => {
       if (leftValue >= 0 && leftValue < reviews.length - 1) {
@@ -46,7 +46,7 @@ const ReviewSlider = () => {
     return () => {
       clearInterval(moveLeft)
     }
-  }, [leftValue, reviews.length]) */
+  }, [leftValue, reviews.length])
 
     return (
         <div className={styles.reviewSlider} style={{left: `${leftValue * -100}%`}}>
