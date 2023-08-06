@@ -1,16 +1,13 @@
 import React, { useState, useRef, useEffect } from "react"
-//import { Link } from "gatsby"
 import { StaticImage } from "gatsby-plugin-image"
 
-//import {Layout} from "../components/layout"
 import Seo from "../components/seo"
 import * as styles from "../style/_index.module.scss"
 import MainMenu from "../components/MainMenu/MainMenu"
 import Header from "../components/Header/Header"
 import ReviewSlider from "../components/Sliders/ReviewSlider"
 import Footer from "../components/Footer/Footer"
-import useTranslations from "../components/useTranslations"
-//import transparent from "../images/transparent_2.png" 
+import useTranslations from "../components/useTranslations" 
 
 const IndexPage = () => {
 

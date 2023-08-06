@@ -9,10 +9,10 @@
  */
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Default Starter`,
-    description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
-    author: `@gatsbyjs`,
-    siteUrl: `https://gatsbystarterdefaultsource.gatsbyjs.io/`,
+    title: `Restaurant Nebula Eats`,
+    description: `Come and experience our warm hospitality, delicious cuisine, and inviting atmosphere. We look forward to welcoming you to our restaurant.`,
+    author: `@websolutionsforyou.com`,
+    siteUrl: `https://thunderous-manatee-291bcd.netlify.app/`,
     devUrl: `http://localhost:8000`,
   },
   plugins: [
