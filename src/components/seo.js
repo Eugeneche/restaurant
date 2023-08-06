@@ -20,7 +20,7 @@ function Seo({ description, title, children, imageUrl, imageAlt }) {
           siteUrl
         }
       }
-      ogImageDefault: file(relativePath: {eq: "social.jpg"}) { 
+      ogImageDefault: file(relativePath: {eq: "og.jpg"}) { 
         childImageSharp {
           fixed(height: 648, width: 1050) {
             src
@@ -37,7 +37,7 @@ function Seo({ description, title, children, imageUrl, imageAlt }) {
   return (
     <>
       <title>{defaultTitle ? `${title} | ${defaultTitle}` : title}</title>
-      <meta property="twitter:image:alt" content={imageAlt || "Groufo auto rental"} />
+      <meta property="twitter:image:alt" content={imageAlt || "Restaurant Nebula Eats"} />
       <meta property="og:image" content={constructUrl(data.site.siteMetadata.siteUrl, data.ogImageDefault?.childImageSharp?.fixed?.src)} />
       <meta name="twitter:image" content={constructUrl(data.site.siteMetadata.siteUrl, data.ogImageDefault?.childImageSharp?.fixed?.src)} />
       <meta name="description" content={metaDescription} />
