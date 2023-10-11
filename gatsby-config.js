@@ -12,7 +12,7 @@ module.exports = {
     title: `Restaurant Nebula Eats`,
     description: `Come and experience our warm hospitality, delicious cuisine, and inviting atmosphere. We look forward to welcoming you to our restaurant.`,
     author: `@websolutionsforyou.com`,
-    siteUrl: `https://thunderous-manatee-291bcd.netlify.app`,
+    siteUrl: `https://nebula-restaurant.netlify.app`,
   },
   plugins: [
     `gatsby-plugin-image`,
